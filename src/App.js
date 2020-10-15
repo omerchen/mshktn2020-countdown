@@ -1,6 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Countdown from 'react-countdown';
+ 
+// Random component
+const Completionist = () => <span>You are good to go!</span>;
+ 
+// Renderer callback with condition
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    // Render a completed state
+    return <Completionist />;
+  } else {
+    // Render a countdown
+    return <span>{days} Days {hours} Hours {minutes} Minutes {seconds} Seconds</span>;
+  }
+};
 
 function App() {
   return (
@@ -8,16 +23,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          We Will Back On
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+        <Countdown date={new Date("2020-10-30").getTime()}
+        renderer={renderer}/>
       </header>
     </div>
   );
