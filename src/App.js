@@ -75,7 +75,7 @@ function App() {
               
               {/* <!-- Social icons --> */}
               <div className="social">
-                <a href="" className="social-icon">
+                {/* <a href="" className="social-icon">
                   <i className="fa fa-twitter fa-lg"></i>
                 </a>
                 <a href="" className="social-icon">
@@ -83,8 +83,8 @@ function App() {
                 </a>
                 <a href="" className="social-icon">
                   <i className="fa fa-google-plus fa-lg"></i>
-                </a>
-                <a href="" className="social-icon">
+                </a> */}
+                <a href="https://instagram.com/maaas.inc" target="_blank" rel="noopener noreferrer" className="social-icon">
                   <i className="fa fa-instagram fa-lg"></i>
                 </a>
               </div>
@@ -94,7 +94,15 @@ function App() {
             
             {/* <!-- Second column --> */}
             <div className="col col-content">
-              <p>And that your grace hath screen'd and stood between much heat and him. I'll sconce me even here. Pray you, be round with him. That blurs the grace and blush of modesty, calls virtue hypocrite, takes off the rose. From the fair forehead of an innocent love and sets a blister there, makes marriage-vows. As false as dicers' oaths: o, such a deed.</p>
+  
+              <h3>
+                SUSTAINABLE <br/>
+                DESIGN
+              </h3>
+         
+              <p>
+                a term that describes environmentally conscious design techniques in the field of architecture and seeks to minimize the negative environmental impact of buildings by enhancing efficiency and moderation in the use of a materials, energy, and development space
+              </p>
             </div>
             {/* <!-- Second column end --> */}
             
@@ -103,15 +111,15 @@ function App() {
               <h3>Contact us</h3>
               <div className="contact">
                 <span className="icon"><i className="fa fa-phone fa-fw"></i></span>
-                <span className="value">+1 800 9780081</span>
+                <span className="value">+62 851-5600-5454</span>
               </div>
               <div className="contact">
                 <span className="icon"><i className="fa fa-envelope-o fa-fw"></i></span>
-                <span className="value"><a href="mailto: info@company.com">info@company.com</a></span>
+                <span className="value"><a href="mailto: admin@maaasinc.com">admin@maaasinc.com</a></span>
               </div>
               <div className="contact">
                 <span className="icon"><i className="fa fa-map-marker fa-fw"></i></span>
-                <span className="value">Jacka Malczewkiego 7/50,<br/>80-107 Gdansk,<br/>Poland</span>
+                <span className="value">Jl Kemiri Barat, Sidorejo,<br/>825c Salatiga,<br/>Jawa Tengah, Indonesia</span>
               </div>
             </div>
             {/* <!-- Third column end --> */}
