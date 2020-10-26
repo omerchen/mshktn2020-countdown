@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="332px" height="407px" viewBox="0 0 332 407" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#4A40DF" offset="0%"></stop>
+            <stop stop-color="#5383F6" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#4A40DF" offset="0%"></stop>
+            <stop stop-color="#5383F6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LM" transform="translate(-341.000000, -132.000000)">
+            <g id="Group-2" transform="translate(341.000000, 132.000000)">
+                <g id="Group">
+                    <path d="M188.5,12.9903811 L287.260217,70.0096189 C301.183265,78.0480947 309.760217,92.9038106 309.760217,108.980762 L309.760217,223.019238 C309.760217,239.096189 301.183265,253.951905 287.260217,261.990381 L188.5,319.009619 C174.576952,327.048095 157.423048,327.048095 143.5,319.009619 L44.739783,261.990381 C30.8167345,253.951905 22.239783,239.096189 22.239783,223.019238 L22.239783,108.980762 C22.239783,92.9038106 30.8167345,78.0480947 44.739783,70.0096189 L143.5,12.9903811 C157.423048,4.95190528 174.576952,4.95190528 188.5,12.9903811 Z" id="Polygon" fill="url(#linearGradient-1)"></path>
+                    <path d="M219.389,81.243 L260.962173,105.072505 C265.315092,107.567605 268,112.201309 268,117.218622 L268,217.354494 C268,222.371807 265.315092,227.005511 260.962173,229.500611 L221.71,251.999484 L221.71,152.905484 L167.87227,214.744239 C167.826913,214.796336 167.779784,214.846835 167.730969,214.895649 L167.57956,215.036949 C166.378011,216.083056 164.579792,216.002128 163.47606,214.883455 L163.347029,214.744239 L110.32,153.837484 L110.32,251.444484 L72.0378269,229.500611 C67.6849083,227.005511 65,222.371807 65,217.354494 L65,117.218622 C65,112.201309 67.6849083,107.567605 72.0378269,105.072505 L112.797,81.709 L165.888554,142.071429 L219.389,81.243 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                </g>
+                <text id="2020" fill="url(#linearGradient-2)" fill-rule="nonzero" font-family="Rubik-Bold, Rubik" font-size="40" font-weight="bold">
+                    <tspan x="209.34" y="397">2020</tspan>
+                </text>
+                <text id="#MSHKTN" fill-rule="nonzero" font-family="Rubik-Light, Rubik" font-size="40" font-weight="300" fill="#6C6C6C">
+                    <tspan x="15.46" y="397">#MSHKTN</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
