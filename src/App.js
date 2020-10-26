@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Countdown from 'react-countdown';
-import Logo from "./logo3.svg"
+import Logo from "./logo.svg"
  
 // Random component
 const Completionist = () => <span>You are good to go!</span>;

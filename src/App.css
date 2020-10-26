@@ -24,7 +24,19 @@
   color: white;
 }
 
-.App-link {
+.dm .time {
+  background-color: rgba(255, 255, 255, .05) !important;
+}
+
+.dm .value {
+  color: #4f69ed !important;
+}
+
+.dm .unit {
+  color: white !important;
+}
+
+.dm .App-link {
   color: #61dafb;
 }
 
@@ -48,4 +60,16 @@
 
 .logoWrapper img {
   height: 10vh;
+}
+
+.dm #bg-canvas {
+  background-color: rgb(10, 10, 10);
+}
+
+.dm .lead {
+  color: white;
+}
+
+body {
+  transition: ease-in 1000ms all;
 }

@@ -25,7 +25,7 @@
 
     <title>#MSHKTN | 2020</title>
   </head>
-  <body class="color-scheme-silver">
+  <body class="color-scheme-silver dm">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script src="js/jquery.js"></script>
@@ -35,7 +35,7 @@
 
     <script type="text/javascript">
       $().ready(function () {
-        var deadline = new Date("October 26, 2020 14:41:50 UTC+02");
+        var deadline = new Date("October 26, 2020 16:15:15 UTC+02");
         // Activate countdownTimer plugin on a '.countdown' element
         $(".countdown").countdownTimer({
           // Set the end date for the countdown
@@ -44,9 +44,21 @@
 
         if (deadline < Date.now()) {
           $(".cst").text("LET'S GO!");
+          $("#bg-canvas").bezierCanvas({
+            maxStyles: 1,
+            maxLines: 100,
+            lineSpacing: 1,
+            colorBase: { r: 255, g: 255, b: 255 },
+            colorVariation: { r: 0, g: 0, b: 0 },
+            moveCenterX: 0,
+            moveCenterY: 0,
+            speedVariation: 0.3,
+            globalAlpha: 1,
+            globalSpeed: 300,
+		  });
+		  $("body").removeClass("dm");
         } else {
           var scheduleWarning = (time, triggerThis) => {
-
             // create a Date object at the desired timepoint
             const startTime = time;
             const now = new Date();
@@ -65,30 +77,42 @@
               triggerThis();
               setInterval(triggerThis, 24 * 60 * 60 * 1000);
             }, firstTriggerAfterMs);
-		  };
-		  
-		  scheduleWarning(deadline, ()=>{
+          };
+
+          scheduleWarning(deadline, () => {
+			  // ON FIRE
 			$(".cst").text("LET'S GO!");
-			console.log("fired")
-		  })
+			$("body").removeClass("dm");
+			$("#bg-canvas").bezierCanvas({
+            maxStyles: 1,
+            maxLines: 100,
+            lineSpacing: 1,
+            colorBase: { r: 255, g: 255, b: 255 },
+            colorVariation: { r: 0, g: 0, b: 0 },
+            moveCenterX: 0,
+            moveCenterY: 0,
+            speedVariation: 0.3,
+            globalAlpha: 1,
+            globalSpeed: 300,
+		  });
+
+          });
+
+          // Activate bezierCanvas plugin on a #bg-canvas element
+          $("#bg-canvas").bezierCanvas({
+            maxStyles: 1,
+            maxLines: 100,
+            lineSpacing: 1,
+            colorBase: { r: 50, g: 50, b: 50 },
+            colorVariation: { r: 0, g: 0, b: 0 },
+            moveCenterX: 0,
+            moveCenterY: 0,
+            speedVariation: 0.3,
+            globalAlpha: 1,
+            globalSpeed: 300,
+		  });
+		  
         }
-
-        // Activate notifyMe plugin on a '#notifyMe' element
-        $("#notifyMe").notifyMe();
-
-        // Activate bezierCanvas plugin on a #bg-canvas element
-        $("#bg-canvas").bezierCanvas({
-          maxStyles: 1,
-          maxLines: 100,
-          lineSpacing: 1,
-          colorBase: { r: 255, g: 255, b: 255 },
-          colorVariation: { r: 0, g: 0, b: 0 },
-          moveCenterX: 0,
-          moveCenterY: 0,
-          speedVariation: 0.3,
-          globalAlpha: 1,
-          globalSpeed: 300,
-        });
 
         // Add handler on 'Scroll down to learn more' link
         $().ready(function () {
