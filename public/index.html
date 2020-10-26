@@ -12,62 +12,92 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <script src="js/modernizr.js"></script>
     <!-- Open Sans from Google Webfonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!-- Main styles file -->
     <link rel="stylesheet" href="css/styles.css" />
     <!-- Icons via Font Awesome -->
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
- 
-    <title>React App</title>
+
+    <title>#MSHKTN | 2020</title>
   </head>
   <body class="color-scheme-silver">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script src="js/jquery.js"></script>
-	  <script src="js/countdown.js"></script>
-	  <script src="js/bezierCanvas.js"></script>
-	  <script src="js/notifyMe.js"></script>
-	
-	<script type="text/javascript">
-	$().ready(function(){
-	
-		// Activate countdownTimer plugin on a '.countdown' element
-		$(".countdown").countdownTimer({
-			// Set the end date for the countdown
-			endTime: new Date("May 24, 2021 14:00:00 UTC+02")
-		});
-		
-		
-		// Activate notifyMe plugin on a '#notifyMe' element	
-		$("#notifyMe").notifyMe();
-		
-		
-		// Activate bezierCanvas plugin on a #bg-canvas element
-		$("#bg-canvas").bezierCanvas({
-			maxStyles: 1,
-			maxLines: 100,
-			lineSpacing: 1,
-			colorBase: {r: 255,g: 255,b: 255},
-			colorVariation: {r: 0, g: 0, b: 0},
-			moveCenterX: 0,
-			moveCenterY: 0,
-			speedVariation: 0.3,
-			globalAlpha: 1,
-			globalSpeed: 300,
+    <script src="js/countdown.js"></script>
+    <script src="js/bezierCanvas.js"></script>
+    <script src="js/notifyMe.js"></script>
 
-		});
-		
-		
-		// Add handler on 'Scroll down to learn more' link
-		$().ready(function(){
-			$(".overlap .more").click(function(e){
-				e.preventDefault();
-				$("body,html").animate({scrollTop: $(window).height()});
-			});
-		});		
-		
-	});
-	</script>
+    <script type="text/javascript">
+      $().ready(function () {
+        var deadline = new Date("October 26, 2020 14:41:50 UTC+02");
+        // Activate countdownTimer plugin on a '.countdown' element
+        $(".countdown").countdownTimer({
+          // Set the end date for the countdown
+          endTime: deadline,
+        });
+
+        if (deadline < Date.now()) {
+          $(".cst").text("LET'S GO!");
+        } else {
+          var scheduleWarning = (time, triggerThis) => {
+
+            // create a Date object at the desired timepoint
+            const startTime = time;
+            const now = new Date();
+
+            // increase timepoint by 24 hours if in the past
+            if (startTime.getTime() < now.getTime()) {
+              startTime.setHours(startTime.getHours() + 24);
+            }
+
+            // get the interval in ms from now to the timepoint when to trigger the alarm
+            const firstTriggerAfterMs = startTime.getTime() - now.getTime();
+
+            // trigger the function triggerThis() at the timepoint
+            // create setInterval when the timepoint is reached to trigger it every day at this timepoint
+            setTimeout(function () {
+              triggerThis();
+              setInterval(triggerThis, 24 * 60 * 60 * 1000);
+            }, firstTriggerAfterMs);
+		  };
+		  
+		  scheduleWarning(deadline, ()=>{
+			$(".cst").text("LET'S GO!");
+			console.log("fired")
+		  })
+        }
+
+        // Activate notifyMe plugin on a '#notifyMe' element
+        $("#notifyMe").notifyMe();
+
+        // Activate bezierCanvas plugin on a #bg-canvas element
+        $("#bg-canvas").bezierCanvas({
+          maxStyles: 1,
+          maxLines: 100,
+          lineSpacing: 1,
+          colorBase: { r: 255, g: 255, b: 255 },
+          colorVariation: { r: 0, g: 0, b: 0 },
+          moveCenterX: 0,
+          moveCenterY: 0,
+          speedVariation: 0.3,
+          globalAlpha: 1,
+          globalSpeed: 300,
+        });
+
+        // Add handler on 'Scroll down to learn more' link
+        $().ready(function () {
+          $(".overlap .more").click(function (e) {
+            e.preventDefault();
+            $("body,html").animate({ scrollTop: $(window).height() });
+          });
+        });
+      });
+    </script>
   </body>
 </html>

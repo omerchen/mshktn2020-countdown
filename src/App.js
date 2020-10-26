@@ -31,7 +31,7 @@ function App() {
           <div className="container">
             {/* <!-- Main header --> */}
             <p className="lead" style={{fontSize:20, fontWeight:200}}>#MSHKTN <span style={{fontWeight:900, color:"#4f69ed"}}>2020</span></p>
-            <h1 style={{fontWeight:100, color:"#4f69ed"}}>COMING SOON</h1>
+            <h1 className="cst" style={{fontWeight:100, color:"#4f69ed"}}>COMING SOON</h1>
             {/* <!-- Sub header --> */}
             
             {/* <!-- Countdown --> */}
