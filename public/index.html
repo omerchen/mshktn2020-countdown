@@ -42,7 +42,8 @@
           endTime: deadline,
         });
 
-        if (deadline < Date.now()) {
+        if (deadline.getTime() < new Date().getTime()) {
+          // White mode
           $(".cst").text("LET'S GO!");
           $("#bg-canvas").bezierCanvas({
             maxStyles: 1,
@@ -55,8 +56,8 @@
             speedVariation: 0.3,
             globalAlpha: 1,
             globalSpeed: 300,
-		  });
-		  $("body").removeClass("dm");
+          });
+          $("body").removeClass("dm");
         } else {
           var scheduleWarning = (time, triggerThis) => {
             // create a Date object at the desired timepoint
@@ -69,33 +70,36 @@
             }
 
             // get the interval in ms from now to the timepoint when to trigger the alarm
-            const firstTriggerAfterMs = startTime.getTime() - now.getTime();
+            const firstTriggerAfterMs = startTime.getTime() - now.getTime()+500;
 
             // trigger the function triggerThis() at the timepoint
             // create setInterval when the timepoint is reached to trigger it every day at this timepoint
             setTimeout(function () {
               triggerThis();
-              setInterval(triggerThis, 24 * 60 * 60 * 1000);
+              //setInterval(triggerThis, 24 * 60 * 60 * 1000);
             }, firstTriggerAfterMs);
           };
 
           scheduleWarning(deadline, () => {
-			  // ON FIRE
-			$(".cst").text("LET'S GO!");
-			$("body").removeClass("dm");
-			$("#bg-canvas").bezierCanvas({
-            maxStyles: 1,
-            maxLines: 100,
-            lineSpacing: 1,
-            colorBase: { r: 255, g: 255, b: 255 },
-            colorVariation: { r: 0, g: 0, b: 0 },
-            moveCenterX: 0,
-            moveCenterY: 0,
-            speedVariation: 0.3,
-            globalAlpha: 1,
-            globalSpeed: 300,
-		  });
-
+            console.log("hhhahahahahhahaha");
+            // ON FIRE
+            if (deadline.getTime() < new Date().getTime()) {
+              // White mode
+              $(".cst").text("LET'S GO!");
+              $("#bg-canvas").bezierCanvas({
+                maxStyles: 1,
+                maxLines: 100,
+                lineSpacing: 1,
+                colorBase: { r: 255, g: 255, b: 255 },
+                colorVariation: { r: 0, g: 0, b: 0 },
+                moveCenterX: 0,
+                moveCenterY: 0,
+                speedVariation: 0.3,
+                globalAlpha: 1,
+                globalSpeed: 300,
+              });
+              $("body").removeClass("dm");
+            }
           });
 
           // Activate bezierCanvas plugin on a #bg-canvas element
@@ -110,8 +114,7 @@
             speedVariation: 0.3,
             globalAlpha: 1,
             globalSpeed: 300,
-		  });
-		  
+          });
         }
 
         // Add handler on 'Scroll down to learn more' link
